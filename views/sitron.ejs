@@ -1,0 +1,75 @@
+<%- include("partials/header"); -%>
+
+<%- include("partials/navbar"); -%>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+  <h1><i class="fas fa-database"></i> moviesDB</h1>
+  <p class="lead">Esse id et adipisicing elit veniam excepteur minim consequat cillum reprehenderit aute officia id exercitation cupidatat culpa pariatur.</p>
+  <hr class="my-2">
+  <p>Adipisicing ipsum irure sint sunt aute esse elit laboris nisi fugiat id cupidatat nisi incididunt cupidatat eu magna. Veniam sunt quis ut reprehenderit sit excepteur occaecat deserunt mollit labore. Adipisicing elit tempor cupidatat voluptate eu
+    ullamco ut. Minim consectetur sint fugiat dolor laborum do incididunt Lorem excepteur sint consectetur ullamco sit Lorem. Magna voluptate do aute proident aliquip est officia cupidatat irure velit consequat veniam tempor non ea occaecat.</p>
+</div>
+
+<!-- Staff-only section -->
+<section id="staff-only">
+  <div class="container-fluid">
+    <h4><i class="fas fa-unlock-alt"></i> Staff Only</h4>
+    <hr class="my-3">
+    <p> This section only appears when logged in as a staff.</p>
+    <ul>
+      <li>Manager - get/post/put/delete</li>
+      <li>Team leader - get/post/put</li>
+      <li>Floor staff - get/post/put</li>
+    </ul>
+    <hr class="my-3">
+    <h6>Add new movie (Every staff)</h6>
+    <form action="/movies" method="POST">
+      <input type="text" placeholder="title" name="title" required />
+      <input class="year-box" type="number" placeholder="year" name="year" />
+      <input class="rating-box" type="text" placeholder="rating" name="rating" />
+      <button class="btn btn-success btn-sm" type="submit">Add</button>
+    </form>
+    <h6>Remove all records (Manager only)</h6>
+    <!-- https://github.com/expressjs/method-override/blob/master/README.md -->
+    <form method="POST" action="/movies?_method=DELETE">
+      <button class="btn btn-danger btn-sm" type="submit">Remove all records</button>
+    </form>
+  </div>
+</section>
+<!-- Staff-only section ends -->
+
+<!-- Content section -->
+<section id="content">
+  <div class="container-fluid">
+    <h2>Esse Lorem qui nulla nisi velit nulla anim irure officia proident!</h2>
+    <div class="row">
+      <% for(var i = 0; i < data.length; i++) {%>
+      <div class="col-lg-3 col-md-6 col-sm-12 movie-list">
+        <img class="img-thumbnail" src="https://i.gadgets360cdn.com/large/skywalker_saga_1588526257979.jpeg" alt="image" width="200px">
+        <div class="movie-details">
+          <span><a href="/movies/<%=data[i].title%>"><%= data[i].title %></a></span>,
+          <span><%= data[i].year %></span>,
+          <span><%= data[i].rating %></span>
+        </div>
+        <hr class="my-3">
+        <div>
+          <form style="display:inline;" method="POST" action="/movies/<%=data[i].title%>?_method=PUT">
+            <input class="title-box" type="text" placeholder="new title" name="title" required />
+            <input class="year-box" type="number" placeholder="new year" name="year" />
+            <input class="rating-box" type="text" placeholder="new rating" name="rating" />
+            <button class="btn btn-warning btn-sm edit-button" type="submit">edit</button>
+          </form>
+          <form style="display:inline;" method="POST" action="/movies/<%=data[i].title%>?_method=DELETE">
+            <button class="btn btn-danger btn-sm" type="submit">remove</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+<!-- Content section ends-->
+
+
+<%- include("partials/footer"); -%>

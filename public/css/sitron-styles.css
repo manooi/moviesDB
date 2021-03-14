@@ -1,0 +1,75 @@
+
+body {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.nav-adjust {
+  padding-right: 0;
+}
+
+.login-box {
+  display: inline;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+
+#staff-only {
+  padding: 1rem 0 0.2rem 0;
+  /* 8ac4d0 */
+  background-color:#83bac7;
+  border-radius: 12px;
+}
+
+#content {
+  margin: 5% 2% 0% 2%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #046582;
+}
+
+/* Style formatting */
+.movie-list {
+  font-weight: bold;
+  position: relative;
+  left: auto;
+  margin-bottom: 3rem;
+}
+
+/* Give space */
+.movie-details {
+  margin-top: 0.5rem;
+}
+
+/* Adjust size */
+.year-box, .rating-box{
+  width: 6rem;
+}
+
+/* Give space */
+.edit-button, .remove-button {
+  margin: 1rem 0.5rem 1rem 0;
+}
+
+#footer {
+  margin-top: 20rem;
+  background-color: #fce38a;
+  border-radius:10px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+
+
+
+
