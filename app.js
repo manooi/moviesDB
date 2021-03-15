@@ -4,7 +4,6 @@ const app = express();
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
-const myPw = "hNnxmWroEnFGYltd"
 
 app.set('view engine', 'ejs')
 
@@ -16,14 +15,6 @@ app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.urlencoded({
   extended: true
 }))
-
-
-//////////////// Mongoose setup
-
-// const url = 'mongodb+srv://manooi:hNnxmWroEnFGYltd@cluster0.0solc.mongodb.net/sitron_test?retryWrites=true&w=majority'
-// const db = mongoose.connection
-// const movie_records = db.collection('movies_records')
-
 
 // local
 const url = 'mongodb://localhost:27017/movieDB'
