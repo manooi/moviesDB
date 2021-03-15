@@ -48,19 +48,20 @@
       <div class="col-lg-3 col-md-6 col-sm-12 movie-list">
         <img class="img-thumbnail" src="https://i.gadgets360cdn.com/large/skywalker_saga_1588526257979.jpeg" alt="image" width="200px">
         <div class="movie-details">
-          <span><a href="/movies/<%=data[i].title%>"><%= data[i].title %></a></span>,
+          <span><a href="/movies/<%=data[i]._id%>"><%= data[i].title %></a></span>,
           <span><%= data[i].year %></span>,
-          <span><%= data[i].rating %></span>
+          <span><%= data[i].rating %></span>,
+          <span><%= data[i]._id %></span>
         </div>
         <hr class="my-3">
         <div>
-          <form style="display:inline;" method="POST" action="/movies/<%=data[i].title%>?_method=PUT">
+          <form style="display:inline;" method="POST" action="/movies/<%=data[i]._id%>?_method=PUT">
             <input class="title-box" type="text" placeholder="new title" name="title" required />
             <input class="year-box" type="number" placeholder="new year" name="year" />
             <input class="rating-box" type="text" placeholder="new rating" name="rating" />
             <button class="btn btn-warning btn-sm edit-button" type="submit">edit</button>
           </form>
-          <form style="display:inline;" method="POST" action="/movies/<%=data[i].title%>?_method=DELETE">
+          <form style="display:inline;" method="POST" action="/movies/<%=data[i]._id%>?_method=DELETE">
             <button class="btn btn-danger btn-sm" type="submit">remove</button>
           </form>
         </div>

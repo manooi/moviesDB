@@ -97,12 +97,12 @@ app.route('/movies')
 ///////////////////// Request Targetting Specific Movies
 
 
-app.route('/movies/:moviesTitle')
+app.route('/movies/:moviesID')
 
   .get(function(req, res) {
 
     Movie.findOne({
-      title: req.params.moviesTitle
+      _id: req.params.moviesID
     }, function(err, foundMovie) {
       if (!err) {
         res.send(foundMovie);
@@ -116,7 +116,7 @@ app.route('/movies/:moviesTitle')
 
     Movie.update(
     // Condition
-    {title:req.params.moviesTitle},
+    {_id:req.params.moviesID},
     // Update
     {title: req.body.title, year: req.body.year, rating: req.body.rating},
     // Overwrite
@@ -137,7 +137,7 @@ app.route('/movies/:moviesTitle')
 
     Movie.update(
       // Condition
-      {title:req.params.moviesTitle},
+      {_id:req.params.moviesID},
       // Set
       {$set: req.body},
       // Callback
@@ -155,7 +155,7 @@ app.route('/movies/:moviesTitle')
   .delete(function(req, res) {
     Movie.deleteOne(
       // Condition
-      {title:req.params.moviesTitle},
+      {_id:req.params.moviesID},
       // Callback
       function(err) {
         if(!err) {
@@ -183,10 +183,10 @@ app.route('/api/movies')
   });
 });
 
-app.route('/api/movies/:moviesTitle')
+app.route('/api/movies/:moviesID')
   .get(function(req, res) {
     Movie.findOne({
-      title: req.params.moviesTitle
+      _id: req.params.moviesID
     }, function(err, foundMovie) {
       if (!err) {
         res.send(foundMovie);
