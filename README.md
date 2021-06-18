@@ -1,6 +1,6 @@
 # moviesDB
 
-This is sitron test project. Simple movie records app. 
+This is a test project. Simple movie records app. 
 I'm still working on user authen and React.js.
 
 
@@ -13,5 +13,5 @@ then
 (You must have mongodb installed, running locally at mongodb://localhost:27017)
 
 ## Screenshot
-![Image](attachments/Screenshot 2021-06-18 105454.png)
+![Image](attachments/screenshot1.png)
 
