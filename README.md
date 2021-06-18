@@ -10,7 +10,7 @@ In the project directory, you can run:
 ### `npm install`
 then
 ### `npm start`
-(You must have mongodb installed, running locally at mongodb://localhost:27017)
+(You must have mongodb installed and run locally at mongodb://localhost:27017)
 
 ## Screenshot
 ![Image](attachments/screenshot1.png)
